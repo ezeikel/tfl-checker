@@ -20,7 +20,7 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 .service('homeService', HomeService)
 .service('blogService', BlogService)
 
-.controller('homeController', ['$scope', 'homeService', HomeController])
+.controller('homeController', ['$scope', '$http', 'homeService', HomeController])
 .controller('blogController', ['$scope', '$routeParams', 'blogService', BlogController])
 
 .directive('articleDir', articleDirective)

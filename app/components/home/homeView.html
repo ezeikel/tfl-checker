@@ -1,5 +1,10 @@
-<h1>This is home page :)</h1>
-<p ng-click="helloWorld()">My name is {{ name}}</p>
-<md-checkbox ng-disabled="false" class="green" ng-model="data.cb4" ng-init="data.cb4=true">
-  Checkbox: Disabled, Checked
-</md-checkbox>
+<h1>TFL Checker</h1>
+<ul>
+  <li ng-repeat="line in status">
+      {{ line.name }}
+      <ul>
+        <li ng-repeat="status in line.lineStatuses">{{ status.statusSeverityDescription }}</li>
+        <li ng-repeat="status in line.lineStatuses">{{ status.reason }}</li>
+      </ul>
+  </li>
+</ul>
