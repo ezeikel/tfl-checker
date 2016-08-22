@@ -1,0 +1,36 @@
+{
+  "name": "ezeikelpemberton-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ezeikel/ezeikelpemberton-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/ezeikel/ezeikelpemberton-site#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sourcemaps": "^1.6.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0-rc.5",
+    "angular-messages": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-touch": "^1.5.8",
+    "angular-ui-bootstrap": "^2.0.1",
+    "bootstrap": "^3.3.7"
+  }
+}

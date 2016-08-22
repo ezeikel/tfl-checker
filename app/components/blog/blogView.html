@@ -1,0 +1,20 @@
+<h1>This is the blog page!</h1>
+<p>My name is {{ name }} and I am {{ num }} years old.</p>
+<article-dir></article-dir>
+<div article-dir></div>
+<h2 ng-click="helloWorld()">Buttons</h2>
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary" ng-model="bigData.breakfast" uib-btn-checkbox>
+  Breakfast
+  </label>
+  <label class="btn btn-primary" ng-model="bigData.lunch" uib-btn-checkbox>
+    Lunch
+  </label>
+  <label class="btn btn-primary" ng-model="bigData.dinner" uib-btn-checkbox>
+    Dinner
+  </label>
+</div>
+<pre><code>{{ bigData | json }}</code></pre>
+
+
+</div>

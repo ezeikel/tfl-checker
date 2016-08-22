@@ -1,0 +1,18 @@
+ul, ol {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+  a:hover {
+    text-decoration: none; }
+
+body div.columns {
+  background: yellow; }
+
+a:focus, a:hover {
+  color: #000; }
+
+
+
+/*# sourceMappingURL=main.css.map */
