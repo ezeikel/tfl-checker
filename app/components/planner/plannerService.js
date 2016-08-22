@@ -1,5 +1,5 @@
 module.exports = function() {
   this.helloWorld = function() {
-    console.log('This is the blogService method');
+    console.log('This is the plannerService method');
   };
 };

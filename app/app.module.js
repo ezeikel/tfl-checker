@@ -5,11 +5,11 @@ require('angular-touch');
 require('angular-ui-bootstrap');
 require('angular-material');
 
-var HomeController = require('./components/home/homeController');
-var HomeService = require('./components/home/HomeService');
+var StatusController = require('./components/status/statusController');
+var StatusService = require('./components/status/StatusService');
 
-var BlogController = require('./components/blog/blogController');
-var BlogService = require('./components/blog/BlogService');
+var PlannerController = require('./components/planner/plannerController');
+var PlannerService = require('./components/planner/PlannerService');
 
 var routes = require('./app.routes.js');
 
@@ -17,11 +17,11 @@ var articleDirective = require('./shared/article/articleDirective');
 
 angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 
-.service('homeService', HomeService)
-.service('blogService', BlogService)
+.service('statusService', StatusService)
+.service('plannerService', PlannerService)
 
-.controller('homeController', ['$scope', '$http', 'homeService', HomeController])
-.controller('blogController', ['$scope', '$routeParams', 'blogService', BlogController])
+.controller('statusController', ['$scope', '$http', 'statusService', StatusController])
+.controller('plannerController', ['$scope', '$routeParams', 'plannerService', PlannerController])
 
 .directive('articleDir', articleDirective)
 

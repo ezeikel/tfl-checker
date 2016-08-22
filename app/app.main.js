@@ -6,11 +6,11 @@ require('angular-touch');
 require('angular-ui-bootstrap');
 require('angular-material');
 
-var HomeController = require('./components/home/homeController');
-var HomeService = require('./components/home/HomeService');
+var StatusController = require('./components/status/statusController');
+var StatusService = require('./components/status/StatusService');
 
-var BlogController = require('./components/blog/blogController');
-var BlogService = require('./components/blog/BlogService');
+var PlannerController = require('./components/planner/plannerController');
+var PlannerService = require('./components/planner/PlannerService');
 
 var routes = require('./app.routes.js');
 
@@ -18,41 +18,41 @@ var articleDirective = require('./shared/article/articleDirective');
 
 angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 
-.service('homeService', HomeService)
-.service('blogService', BlogService)
+.service('statusService', StatusService)
+.service('plannerService', PlannerService)
 
-.controller('homeController', ['$scope', '$http', 'homeService', HomeController])
-.controller('blogController', ['$scope', '$routeParams', 'blogService', BlogController])
+.controller('statusController', ['$scope', '$http', 'statusService', StatusController])
+.controller('plannerController', ['$scope', '$routeParams', 'plannerService', PlannerController])
 
 .directive('articleDir', articleDirective)
 
 .config(routes);
 
-},{"./app.routes.js":2,"./components/blog/BlogService":4,"./components/blog/blogController":3,"./components/home/HomeService":6,"./components/home/homeController":5,"./shared/article/articleDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
+},{"./app.routes.js":2,"./components/planner/PlannerService":4,"./components/planner/plannerController":3,"./components/status/StatusService":6,"./components/status/statusController":5,"./shared/article/articleDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
 module.exports = function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'app/components/home/homeView.html',
-      controller: 'homeController'
+      templateUrl: 'app/components/status/statusView.html',
+      controller: 'statusController'
     })
-    .when('/blog/:num', {
-      templateUrl: 'app/components/blog/blogView.html',
-      controller: 'blogController'
+    .when('/planner/:num', {
+      templateUrl: 'app/components/planner/plannerView.html',
+      controller: 'plannerController'
     })
-    .when('/blog', {
-      templateUrl: 'app/components/blog/blogView.html',
-      controller: 'blogController'
+    .when('/planner', {
+      templateUrl: 'app/components/planner/plannerView.html',
+      controller: 'plannerController'
     })
 }
 
 },{}],3:[function(require,module,exports){
-module.exports = function($scope, $routeParams, blogService) {
+module.exports = function($scope, $routeParams, plannerService) {
   $scope.message = 'Big bad wolf';
   $scope.name = 'Carlos the Generals';
   $scope.num = $routeParams.num || 1;
   $scope.newer = 'testing 123';
 
-  $scope.helloWorld = blogService.helloWorld;
+  $scope.helloWorld = plannerService.helloWorld;
 
   // BUTTONS ======================
 
@@ -71,16 +71,16 @@ module.exports = function($scope, $routeParams, blogService) {
 },{}],4:[function(require,module,exports){
 module.exports = function() {
   this.helloWorld = function() {
-    console.log('This is the blogService method');
+    console.log('This is the plannerService method');
   };
 };
 
 },{}],5:[function(require,module,exports){
-module.exports = function($scope, $http, homeService) {
+module.exports = function($scope, $http, statusService) {
   $scope.message = 'Three Little Birds';
   $scope.name = 'Ezeikejl';
 
-  $scope.helloWorld = homeService.helloWorld;
+  $scope.helloWorld = statusService.helloWorld;
 
   $scope.url = 'https://api.tfl.gov.uk/line/mode/tube/status';
 
@@ -101,7 +101,7 @@ module.exports = function($scope, $http, homeService) {
 },{}],6:[function(require,module,exports){
 module.exports = function() {
   this.helloWorld = function() {
-    console.log('This is the homeService method');
+    console.log('This is the statusService method');
   };
 };
 

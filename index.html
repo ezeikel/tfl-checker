@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./assets/css/main.css"/>
-    <title>Ezeikel Pemberton - London based Wedding Photographer</title>
+    <title>TFL Checker - Busy app for a busier city</title>
   </head>
-  <body ng-app="app" layout="column">
+  <body ng-app="app">
+    <header>
+        <h1>TFL Checker</h1>
+    </header>
     <nav>
       <ul>
-        <li><a href="#/"> Home</a></li>
-        <li><a href="#/blog">Blog</a></li>
-        <li><a href="">???</a></li>
+        <li><a href="#/">Status</a></li>
+        <li><a href="#/planner">Planner</a></li>
       </ul>
     </nav>
-      <div class="">
-        <div class="">
-          <div ng-view>
-          </div>
-        </div>
+      <div ng-view>
       </div>
     <script src="./app/app.main.js"></script>
   </body>

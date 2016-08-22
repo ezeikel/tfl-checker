@@ -1,8 +1,8 @@
-module.exports = function($scope, $http, homeService) {
+module.exports = function($scope, $http, statusService) {
   $scope.message = 'Three Little Birds';
   $scope.name = 'Ezeikejl';
 
-  $scope.helloWorld = homeService.helloWorld;
+  $scope.helloWorld = statusService.helloWorld;
 
   $scope.url = 'https://api.tfl.gov.uk/line/mode/tube/status';
 

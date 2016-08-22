@@ -1,15 +1,15 @@
 module.exports = function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'app/components/home/homeView.html',
-      controller: 'homeController'
+      templateUrl: 'app/components/status/statusView.html',
+      controller: 'statusController'
     })
-    .when('/blog/:num', {
-      templateUrl: 'app/components/blog/blogView.html',
-      controller: 'blogController'
+    .when('/planner/:num', {
+      templateUrl: 'app/components/planner/plannerView.html',
+      controller: 'plannerController'
     })
-    .when('/blog', {
-      templateUrl: 'app/components/blog/blogView.html',
-      controller: 'blogController'
+    .when('/planner', {
+      templateUrl: 'app/components/planner/plannerView.html',
+      controller: 'plannerController'
     })
 }
