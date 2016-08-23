@@ -1,0 +1,22 @@
+.tfl-lines {
+  display: flex;
+  flex-direction: column;
+  .line {
+    text-align: center;
+    //color: #fff;
+    width: 100%;
+    //padding: 1rem 0.5rem;
+    //background: tomato;
+    + .line {
+      margin-top: 0.5rem;
+    }
+    > span {
+      display: block;
+      &:first-child {
+        padding: 0.5rem 1rem;
+        background: tomato;
+        color: #fff;
+      }
+    }
+  }
+}

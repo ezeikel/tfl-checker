@@ -1,9 +1,11 @@
-<ul>
-  <li ng-repeat="line in status">
-      {{ line.name }}
-      <ul>
-        <li ng-repeat="status in line.lineStatuses">{{ status.statusSeverityDescription }}</li>
-        <li ng-repeat="status in line.lineStatuses">{{ status.reason }}</li>
-      </ul>
+<ul class="tfl-lines">
+  <li class="line" ng-repeat="line in status">
+      <span>
+        {{ line.name }}:
+      </span>
+      <span>
+        <span class="line__status" ng-repeat="status in line.lineStatuses">{{ status.statusSeverityDescription }}</span>
+        <span class="line__description" ng-repeat="status in line.lineStatuses">{{ status.reason }}</span>
+      </span>
   </li>
 </ul>

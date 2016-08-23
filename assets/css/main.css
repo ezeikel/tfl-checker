@@ -1,5 +1,6 @@
 ul, ol {
-  list-style: none; }
+  list-style: none;
+  padding-left: 0; }
 
 a {
   text-decoration: none;
@@ -7,6 +8,21 @@ a {
 
 body div.columns {
   background: yellow; }
+
+.tfl-lines {
+  display: flex;
+  flex-direction: column; }
+  .tfl-lines .line {
+    text-align: center;
+    width: 100%; }
+    .tfl-lines .line + .line {
+      margin-top: 0.5rem; }
+    .tfl-lines .line > span {
+      display: block; }
+      .tfl-lines .line > span:first-child {
+        padding: 0.5rem 1rem;
+        background: tomato;
+        color: #fff; }
 
 a:focus, a:hover {
   color: #000; }
