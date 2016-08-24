@@ -8,17 +8,23 @@
     <title>TFL Checker - Busy app for a busier city</title>
   </head>
   <body ng-app="app">
-    <div class="container-fluid">
-      <header>
-          <h1>TFL Checker<small>The busy app for a busy city</small></h1>
-      </header>
-      <nav class="col-md-12">
-        <ul>
-          <li><a href="#/">Status</a></li>
-          <li><a href="#/planner">Planner</a></li>
-        </ul>
-      </nav>
-      <div ng-view>
+    <div class="container">
+      <div class="row">
+        <header class="">
+            <h1>TFL Checker <small>The busy app for a busy city</small></h1>
+        </header>
+      </div>
+      <div class="row">
+        <nav class="col-md-12">
+          <ul class="clear">
+            <li><a href="#/">Status</a></li>
+            <li><a href="#/planner">Planner</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="col-md-12" ng-view>
+        </div>
       </div>
     </div>
     <script src="./app/app.main.js"></script>

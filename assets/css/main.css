@@ -21,7 +21,7 @@ body div.columns {
       display: block; }
       .tfl-lines .line > span:first-child {
         padding: 0.5rem 1rem;
-        background: tomato;
+        background: #9B0056;
         color: #fff; }
 
 a:focus, a:hover {
