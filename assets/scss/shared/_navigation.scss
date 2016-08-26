@@ -1,0 +1,16 @@
+.navigation {
+  margin: 2rem 0;
+  .navigation__links {
+    display: flex;
+    li {
+      background: #1abc9c;
+      padding: 1.2rem 2rem;
+      a {
+        color: $color-white;
+      }
+      & + li {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

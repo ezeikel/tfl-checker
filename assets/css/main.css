@@ -19,10 +19,46 @@ body div.columns {
       margin-top: 0.5rem; }
     .tfl-lines .line > span {
       display: block; }
+      .bakerloo .tfl-lines .line > span:first-child {
+        background-color: #B36305; }
       .tfl-lines .line > span:first-child {
         padding: 0.5rem 1rem;
         background: #9B0056;
         color: #fff; }
+        .tfl-lines .line > span:first-child.bakerloo {
+          background-color: #B36305; }
+        .tfl-lines .line > span:first-child.central {
+          background-color: #E32017; }
+        .tfl-lines .line > span:first-child.circle {
+          background-color: #FFD300; }
+        .tfl-lines .line > span:first-child.district {
+          background-color: #00782A; }
+        .tfl-lines .line > span:first-child.hammersmith-city {
+          background-color: #F3A9BB; }
+        .tfl-lines .line > span:first-child.jubilee {
+          background-color: #A0A5A9; }
+        .tfl-lines .line > span:first-child.metropolitan {
+          background-color: #9B0056; }
+        .tfl-lines .line > span:first-child.northern {
+          background-color: #000000; }
+        .tfl-lines .line > span:first-child.piccadilly {
+          background-color: #003688; }
+        .tfl-lines .line > span:first-child.victoria {
+          background-color: #0098D4; }
+        .tfl-lines .line > span:first-child.waterloo-city {
+          background-color: #95CDBA; }
+
+.navigation {
+  margin: 2rem 0; }
+  .navigation .navigation__links {
+    display: flex; }
+    .navigation .navigation__links li {
+      background: #1abc9c;
+      padding: 1.2rem 2rem; }
+      .navigation .navigation__links li a {
+        color: #fff; }
+      .navigation .navigation__links li + li {
+        margin-left: 1rem; }
 
 a:focus, a:hover {
   color: #000; }

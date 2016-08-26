@@ -12,10 +12,46 @@
     }
     > span {
       display: block;
+      .bakerloo &:first-child {
+        background-color: $bakerloo-color;
+      }
       &:first-child {
         padding: 0.5rem 1rem;
         background: $metropolitan-color;
         color: #fff;
+        &.bakerloo {
+          background-color: $bakerloo-color;
+        }
+        &.central {
+          background-color: $central-color;
+        }
+        &.circle {
+          background-color: $circle-color;
+        }
+        &.district {
+          background-color: $district-color;
+        }
+        &.hammersmith-city {
+          background-color: $hammersmith-city-color;
+        }
+        &.jubilee {
+          background-color: $jubilee-color;
+        }
+        &.metropolitan {
+          background-color: $metropolitan-color;
+        }
+        &.northern {
+          background-color: $northern-color;
+        }
+        &.piccadilly {
+          background-color: $picadilly-color;
+        }
+        &.victoria {
+          background-color: $victoria-color;
+        }
+        &.waterloo-city {
+          background-color: $waterloo-city-color;
+        }
       }
     }
   }

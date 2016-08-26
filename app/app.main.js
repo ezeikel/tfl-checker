@@ -28,7 +28,7 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 
 .config(routes);
 
-},{"./app.routes.js":2,"./components/planner/PlannerService":4,"./components/planner/plannerController":3,"./components/status/StatusService":6,"./components/status/statusController":5,"./shared/article/articleDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
+},{"./app.routes.js":2,"./components/planner/PlannerService":3,"./components/planner/plannerController":4,"./components/status/StatusService":5,"./components/status/statusController":6,"./shared/article/articleDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
 module.exports = function($routeProvider) {
   $routeProvider
     .when('/', {
@@ -46,6 +46,13 @@ module.exports = function($routeProvider) {
 }
 
 },{}],3:[function(require,module,exports){
+module.exports = function() {
+  this.helloWorld = function() {
+    console.log('This is the plannerService method');
+  };
+};
+
+},{}],4:[function(require,module,exports){
 module.exports = function($scope, $routeParams, plannerService) {
   $scope.message = 'Big bad wolf';
   $scope.name = 'Carlos the Generals';
@@ -68,14 +75,14 @@ module.exports = function($scope, $routeParams, plannerService) {
 
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 module.exports = function() {
   this.helloWorld = function() {
-    console.log('This is the plannerService method');
+    console.log('This is the statusService method');
   };
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function($scope, $http, statusService) {
   $scope.message = 'Three Little Birds';
   $scope.name = 'Ezeikejl';
@@ -96,13 +103,6 @@ module.exports = function($scope, $http, statusService) {
   });
 
 
-};
-
-},{}],6:[function(require,module,exports){
-module.exports = function() {
-  this.helloWorld = function() {
-    console.log('This is the statusService method');
-  };
 };
 
 },{}],7:[function(require,module,exports){
