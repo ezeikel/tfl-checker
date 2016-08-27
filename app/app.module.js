@@ -13,7 +13,7 @@ var PlannerService = require('./components/planner/PlannerService');
 
 var routes = require('./app.routes.js');
 
-var articleDirective = require('./shared/article/articleDirective');
+var lineStatusDirective = require('./shared/line-status/lineStatusDirective');
 
 angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 
@@ -23,6 +23,6 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 .controller('statusController', ['$scope', '$http', 'statusService', StatusController])
 .controller('plannerController', ['$scope', '$routeParams', 'plannerService', PlannerController])
 
-.directive('articleDir', articleDirective)
+.directive('lineStatus', lineStatusDirective)
 
 .config(routes);

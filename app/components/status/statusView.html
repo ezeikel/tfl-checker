@@ -1,23 +1,3 @@
 <ul class="tfl-lines">
-  <li class="line" ng-repeat="line in status">
-      <span ng-class="
-      {bakerloo: '{{line.name}}' == 'Bakerloo',
-      central: '{{line.name}}' == 'Central',
-      circle: '{{line.name}}' == 'Circle',
-      district: '{{line.name}}' == 'District',
-      'hammersmith-city': '{{line.name}}' == 'Hammersmith & City',
-      jubilee: '{{line.name}}' == 'Jubilee',
-      metropolitan: '{{line.name}}' == 'Metropolitan',
-      northern: '{{line.name}}' == 'Northern',
-      piccadilly: '{{line.name}}' == 'Piccadilly',
-      victoria: '{{line.name}}' == 'Victoria',
-      'waterloo-city': '{{line.name}}' == 'Waterloo & City'}"
-      >
-        {{ line.name }}:
-      </span>
-      <span>
-        <span class="line__status" ng-repeat="status in line.lineStatuses">{{ status.statusSeverityDescription }}</span>
-        <span class="line__description" ng-repeat="status in line.lineStatuses">{{ status.reason }}</span>
-      </span>
-  </li>
+    <line-status></line-status>
 </ul>

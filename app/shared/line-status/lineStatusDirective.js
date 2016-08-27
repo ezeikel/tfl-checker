@@ -1,7 +1,7 @@
 module.exports = function() {
   return {
     restrict: 'AE',
-    templateUrl: 'app/shared/carousel/carouselView.html',
+    templateUrl: 'app/shared/line-status/lineStatusView.html',
     replace: true
   }
 }

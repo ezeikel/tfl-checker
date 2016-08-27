@@ -14,7 +14,7 @@ var PlannerService = require('./components/planner/PlannerService');
 
 var routes = require('./app.routes.js');
 
-var articleDirective = require('./shared/article/articleDirective');
+var lineStatusDirective = require('./shared/line-status/lineStatusDirective');
 
 angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 
@@ -24,11 +24,11 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 .controller('statusController', ['$scope', '$http', 'statusService', StatusController])
 .controller('plannerController', ['$scope', '$routeParams', 'plannerService', PlannerController])
 
-.directive('articleDir', articleDirective)
+.directive('lineStatus', lineStatusDirective)
 
 .config(routes);
 
-},{"./app.routes.js":2,"./components/planner/PlannerService":3,"./components/planner/plannerController":4,"./components/status/StatusService":5,"./components/status/statusController":6,"./shared/article/articleDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
+},{"./app.routes.js":2,"./components/planner/PlannerService":3,"./components/planner/plannerController":4,"./components/status/StatusService":5,"./components/status/statusController":6,"./shared/line-status/lineStatusDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
 module.exports = function($routeProvider) {
   $routeProvider
     .when('/', {
@@ -109,12 +109,8 @@ module.exports = function($scope, $http, statusService) {
 module.exports = function() {
   return {
     restrict: 'AE',
-    templateUrl: 'app/shared/article/articleView.html',
+    templateUrl: 'app/shared/line-status/lineStatusView.html',
     replace: true
-    // TODO: This creates a new scope for the directive. Not the scope from the parent page.
-    // scope: {
-    //
-    // }
   }
 }
 
