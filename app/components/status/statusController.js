@@ -1,21 +1,21 @@
 module.exports = function($scope, $http, statusService) {
   $scope.message = 'Three Little Birds';
-  $scope.name = 'Ezeikejl';
+  $scope.name = 'Ezeikel';
 
   $scope.helloWorld = statusService.helloWorld;
 
   $scope.url = 'https://api.tfl.gov.uk/line/mode/tube/status';
 
   $http.get($scope.url).then(function(response) {
+
     $scope.status = response.data;
 
-    // for (var item in $scope.resp) {
-    //   var line = $scope.resp[item];
-    //   $scope.lines.push(line);
-    // }
-    //   console.log($scope.resp);
-    //   console.log($scope.lines);
+    var date = new Date();
+    var minutes = date.getMinutes();
+
+    $scope.hours = date.getHours();
+    $scope.formattedMinutes = minutes.toString().length === 1 ? '0' + minutes : minutes;
+    $scope.period = $scope.hours < 12 ? 'am' : 'pm';
+    $scope.time = $scope.hours + ':' + $scope.formattedMinutes + $scope.period;
   });
-
-
 };

@@ -54,24 +54,7 @@ module.exports = function() {
 
 },{}],4:[function(require,module,exports){
 module.exports = function($scope, $routeParams, plannerService) {
-  $scope.message = 'Big bad wolf';
-  $scope.name = 'Carlos the Generals';
-  $scope.num = $routeParams.num || 1;
-  $scope.newer = 'testing 123';
 
-  $scope.helloWorld = plannerService.helloWorld;
-
-  // BUTTONS ======================
-
-  // define some random object and button values
-  $scope.bigData = {};
-
-  $scope.bigData.breakfast = false;
-  $scope.bigData.lunch = true;
-  $scope.bigData.dinner = false;
-
-  // COLLAPSE =====================
-  $scope.isCollapsed = false;
 
 };
 
@@ -85,24 +68,24 @@ module.exports = function() {
 },{}],6:[function(require,module,exports){
 module.exports = function($scope, $http, statusService) {
   $scope.message = 'Three Little Birds';
-  $scope.name = 'Ezeikejl';
+  $scope.name = 'Ezeikel';
 
   $scope.helloWorld = statusService.helloWorld;
 
   $scope.url = 'https://api.tfl.gov.uk/line/mode/tube/status';
 
   $http.get($scope.url).then(function(response) {
+
     $scope.status = response.data;
 
-    // for (var item in $scope.resp) {
-    //   var line = $scope.resp[item];
-    //   $scope.lines.push(line);
-    // }
-    //   console.log($scope.resp);
-    //   console.log($scope.lines);
+    var date = new Date();
+    var minutes = date.getMinutes();
+
+    $scope.hours = date.getHours();
+    $scope.formattedMinutes = minutes.toString().length === 1 ? '0' + minutes : minutes;
+    $scope.period = $scope.hours < 12 ? 'am' : 'pm';
+    $scope.time = $scope.hours + ':' + $scope.formattedMinutes + $scope.period;
   });
-
-
 };
 
 },{}],7:[function(require,module,exports){

@@ -1,20 +1,10 @@
-<h1>This is the planner page!</h1>
-<p>My name is {{ name }} and I am {{ num }} years old.</p>
+<h4>Journey Planner:</h4>
 <article-dir></article-dir>
-<div article-dir></div>
-<h2 ng-click="helloWorld()">Buttons</h2>
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary" ng-model="bigData.breakfast" uib-btn-checkbox>
-  Breakfast
-  </label>
-  <label class="btn btn-primary" ng-model="bigData.lunch" uib-btn-checkbox>
-    Lunch
-  </label>
-  <label class="btn btn-primary" ng-model="bigData.dinner" uib-btn-checkbox>
-    Dinner
-  </label>
-</div>
-<pre><code>{{ bigData | json }}</code></pre>
-
-
+<form>
+  <label>Start<label>
+  <input type='text' placeholder='Brixton' />
+  <label>End</label>
+  <input type="text" placeholder="Peckham" />
+  <input type="button" />
+</form>
 </div>
