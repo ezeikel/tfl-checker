@@ -7,7 +7,7 @@ require('angular-ui-bootstrap');
 require('angular-material');
 
 var StatusController = require('./components/status/statusController');
-var StatusService = require('./components/status/StatusService');
+var GetApiDataService = require('./components/status/getApiDataService');
 
 var PlannerController = require('./components/planner/plannerController');
 var PlannerService = require('./components/planner/PlannerService');
@@ -18,17 +18,17 @@ var lineStatusDirective = require('./shared/line-status/lineStatusDirective');
 
 angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 
-.service('statusService', StatusService)
+.service('getApiDataService', ['$http', GetApiDataService])
 .service('plannerService', PlannerService)
 
-.controller('statusController', ['$scope', '$http', 'statusService', StatusController])
+.controller('statusController', ['$scope', 'getApiDataService', StatusController])
 .controller('plannerController', ['$scope', '$routeParams', 'plannerService', PlannerController])
 
 .directive('lineStatus', lineStatusDirective)
 
 .config(routes);
 
-},{"./app.routes.js":2,"./components/planner/PlannerService":3,"./components/planner/plannerController":4,"./components/status/StatusService":5,"./components/status/statusController":6,"./shared/line-status/lineStatusDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
+},{"./app.routes.js":2,"./components/planner/PlannerService":3,"./components/planner/plannerController":4,"./components/status/getApiDataService":5,"./components/status/statusController":6,"./shared/line-status/lineStatusDirective":7,"angular":21,"angular-animate":9,"angular-material":13,"angular-route":15,"angular-touch":17,"angular-ui-bootstrap":19}],2:[function(require,module,exports){
 module.exports = function($routeProvider) {
   $routeProvider
     .when('/', {
@@ -59,33 +59,32 @@ module.exports = function($scope, $routeParams, plannerService) {
 };
 
 },{}],5:[function(require,module,exports){
-module.exports = function() {
-  this.helloWorld = function() {
-    console.log('This is the statusService method');
-  };
+module.exports = function($http) {
+  this.getData = function (url, options) {
+    return $http.get(url)
+      .then(function(response) {
+        return response.data;
+      })
+      .catch(function(error) {
+        console.log('Error: ', error);
+        throw error;
+      });
+  }
 };
 
 },{}],6:[function(require,module,exports){
-module.exports = function($scope, $http, statusService) {
-  $scope.message = 'Three Little Birds';
-  $scope.name = 'Ezeikel';
-
-  $scope.helloWorld = statusService.helloWorld;
-
-  $scope.url = 'https://api.tfl.gov.uk/line/mode/tube/status';
-
-  $http.get($scope.url).then(function(response) {
-
-    $scope.status = response.data;
-
-    var date = new Date();
-    var minutes = date.getMinutes();
-
-    $scope.hours = date.getHours();
-    $scope.formattedMinutes = minutes.toString().length === 1 ? '0' + minutes : minutes;
-    $scope.period = $scope.hours < 12 ? 'am' : 'pm';
-    $scope.time = $scope.hours + ':' + $scope.formattedMinutes + $scope.period;
+module.exports = function($scope, GetApiDataService) {
+  GetApiDataService.getData('https://api.tfl.gov.uk/line/mode/tube/status').then(function(data) {
+    $scope.status = data;
   });
+
+  var date = new Date();
+  var minutes = date.getMinutes();
+
+  $scope.hours = date.getHours();
+  $scope.formattedMinutes = minutes.toString().length === 1 ? '0' + minutes : minutes;
+  $scope.period = $scope.hours < 12 ? 'am' : 'pm';
+  $scope.time = $scope.hours + ':' + $scope.formattedMinutes + $scope.period;
 };
 
 },{}],7:[function(require,module,exports){

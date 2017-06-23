@@ -6,7 +6,7 @@ require('angular-ui-bootstrap');
 require('angular-material');
 
 var StatusController = require('./components/status/statusController');
-var StatusService = require('./components/status/StatusService');
+var GetApiDataService = require('./components/status/getApiDataService');
 
 var PlannerController = require('./components/planner/plannerController');
 var PlannerService = require('./components/planner/PlannerService');
@@ -17,10 +17,10 @@ var lineStatusDirective = require('./shared/line-status/lineStatusDirective');
 
 angular.module('app', ['ngRoute', 'ui.bootstrap', 'ngMaterial'])
 
-.service('statusService', StatusService)
+.service('getApiDataService', ['$http', GetApiDataService])
 .service('plannerService', PlannerService)
 
-.controller('statusController', ['$scope', '$http', 'statusService', StatusController])
+.controller('statusController', ['$scope', 'getApiDataService', StatusController])
 .controller('plannerController', ['$scope', '$routeParams', 'plannerService', PlannerController])
 
 .directive('lineStatus', lineStatusDirective)
