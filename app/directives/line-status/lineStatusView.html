@@ -15,6 +15,6 @@
   </span>
   <span>
     <span class="line__status" ng-repeat="status in line.lineStatuses">{{ status.statusSeverityDescription }}</span>
-    <span class="line__description" ng-repeat="status in line.lineStatuses">{{ status.reason }}</span>
+    <span class="line__description"  ng-bind-html ng-repeat="status in line.lineStatuses">{{ status.reason }}</span>
   </span>
 </li>
