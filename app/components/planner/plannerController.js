@@ -1,4 +1,4 @@
-module.exports = function($scope, $routeParams, plannerService) {
+module.exports = function($scope) {
 
 
 };
