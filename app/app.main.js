@@ -28,17 +28,20 @@ angular.module('app', ['ngRoute'])
 },{"./app.routes.js":2,"./components/planner/plannerController":3,"./components/status/statusController":4,"./directives/line-status/lineStatusDirective":5,"./services/currentTimeService":6,"./services/getApiDataService":7,"angular":13,"angular-animate":9,"angular-route":11}],2:[function(require,module,exports){
 module.exports = function($routeProvider, $locationProvider) {
   $routeProvider
-    .when('/', {
+    .when('/status', {
       templateUrl: 'app/components/status/statusView.html',
       controller: 'statusController'
+    })
+    .when('/planner', {
+      templateUrl: 'app/components/planner/plannerView.html',
+      controller: 'plannerController'
     })
     .when('/planner/:num', {
       templateUrl: 'app/components/planner/plannerView.html',
       controller: 'plannerController'
     })
-    .when('/planner', {
-      templateUrl: 'app/components/planner/plannerView.html',
-      controller: 'plannerController'
+    .otherwise({
+      redirectTo: '/status'
     });
     $locationProvider.hashPrefix('');
 }
@@ -52,9 +55,10 @@ module.exports = function($scope) {
 },{}],4:[function(require,module,exports){
 module.exports = function($scope, GetApiDataService, CurrentTimeService) {
 
-  GetApiDataService.getData('https://api.tfl.gov.uk/line/mode/tube/status').then(function(data) {
-    $scope.status = data;
-  });
+  GetApiDataService.getData('https://api.tfl.gov.uk/line/mode/tube/status')
+    .then(function(data) {
+      $scope.status = data;
+    });
 
   $scope.time = CurrentTimeService.time;
 };
