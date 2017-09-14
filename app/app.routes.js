@@ -1,4 +1,4 @@
-module.exports = function($routeProvider) {
+module.exports = function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'app/components/status/statusView.html',
@@ -11,5 +11,6 @@ module.exports = function($routeProvider) {
     .when('/planner', {
       templateUrl: 'app/components/planner/plannerView.html',
       controller: 'plannerController'
-    })
+    });
+    $locationProvider.hashPrefix('');
 }
