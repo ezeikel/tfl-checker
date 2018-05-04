@@ -1,4 +1,4 @@
-module.exports = function($routeProvider, $locationProvider) {
+export default ($routeProvider, $locationProvider) => {
   $routeProvider
     .when('/status', {
       template: require('./components/status/statusView.html'),

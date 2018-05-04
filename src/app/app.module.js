@@ -1,16 +1,12 @@
-require('angular');
-require('angular-route');
-require('angular-animate');
-
-const StatusController = require('./components/status/statusController');
-const PlannerController = require('./components/planner/plannerController');
-
-const GetApiDataService = require('./services/getApiDataService');
-const CurrentTimeService = require('./services/currentTimeService');
-
-const lineStatusDirective = require('./directives/line-status/lineStatusDirective');
-
-const routes = require('./app.routes.js');
+import 'angular';
+import 'angular-route';
+import 'angular-animate';
+import StatusController from './components/status/statusController';
+import PlannerController from './components/planner/plannerController';
+import GetApiDataService from'./services/getApiDataService';
+import CurrentTimeService from './services/currentTimeService';
+import lineStatusDirective from './directives/line-status/lineStatusDirective';
+import routes from './app.routes.js';
 
 angular.module('app', ['ngRoute'])
 
