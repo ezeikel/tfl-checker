@@ -2,15 +2,15 @@ require('angular');
 require('angular-route');
 require('angular-animate');
 
-var StatusController = require('./components/status/statusController');
-var PlannerController = require('./components/planner/plannerController');
+const StatusController = require('./components/status/statusController');
+const PlannerController = require('./components/planner/plannerController');
 
-var GetApiDataService = require('./services/getApiDataService');
-var CurrentTimeService = require('./services/currentTimeService');
+const GetApiDataService = require('./services/getApiDataService');
+const CurrentTimeService = require('./services/currentTimeService');
 
-var lineStatusDirective = require('./directives/line-status/lineStatusDirective');
+const lineStatusDirective = require('./directives/line-status/lineStatusDirective');
 
-var routes = require('./app.routes.js');
+const routes = require('./app.routes.js');
 
 angular.module('app', ['ngRoute'])
 
